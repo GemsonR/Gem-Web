@@ -9,13 +9,19 @@ function App() {
   const [description, setDescription] = useState({
     list: [],
     image: [],
+    id: [],
   });
+
   return (
     <>
       <Header />
       <Container>
         <WebList data={data} setDescription={setDescription} />
-        <WebDetail lists={description.list} image={description.image} />
+        <WebDetail
+          lists={description.list}
+          image={description.image}
+          id={description.id}
+        />
       </Container>
     </>
   );

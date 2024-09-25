@@ -1,9 +1,9 @@
 // import Container from "./Source";
 import styles from "./weblist.module.css";
 
-const WebList = ({ data, setDescription}) => {
-  function handleClick(list, image) {
-    setDescription({list: list, image: image})
+const WebList = ({ data, setDescription }) => {
+  function handleClick(list, image, id) {
+    setDescription({ list: list, image: image, id: id });
   }
 
   return (
@@ -18,7 +18,17 @@ const WebList = ({ data, setDescription}) => {
             <p>{data.text}</p>
           </div>
           <div className={styles.btnContainer}>
-            <button onClick={() => handleClick(data.description.list, data.description.imgUrl)}>View</button>
+            <button
+              onClick={() =>
+                handleClick(
+                  data.description.list,
+                  data.description.imgUrl,
+                  data.description.id
+                )
+              }
+            >
+              View
+            </button>
           </div>
         </div>
       ))}
